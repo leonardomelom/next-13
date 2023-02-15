@@ -1,17 +1,14 @@
-import Repo from '@/components/Repo'
 import User from '@/components/User'
+import Link from 'next/link'
 import { Suspense } from 'react'
 export default function Home() {
   return (
     <div>
       <h1>Home</h1>
+      <Link href="/dashboard">Dashboard</Link>
       <Suspense fallback="carregando user">
         {/* @ts-expect-error Async Server Component */}
         <User />
-      </Suspense>
-      <Suspense fallback="carregando repos">
-        {/* @ts-expect-error Async Server Component */}
-        <Repo />
       </Suspense>
     </div>
   )
